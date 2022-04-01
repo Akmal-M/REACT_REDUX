@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import CustomerComponent from "./components/customerComponent";
+import PersonComponent from "./components/personComponent";
+import {getCashActionCreator, setCashActionCreator} from "./store/actionCreators/cashActionCreator";
 
 function App() {
+
+    const dispatch = useDispatch()
+    const cash = useSelector(state => state.cashReduce.cash)
+
+
+    const addCash = (cash) => {
+        dispatch(setCashActionCreator(cash))
+    }
+
+    const getCash = (cash) => {
+        dispatch(getCashActionCreator( cash))
+    }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={"app"}>
+        <div style={{display: "flex", justifyContent:"center", marginTop:"20%"}}>
+            <div style={{display:""}}>{cash}</div>
+          <div>
+              <button onClick={() => addCash(Number(prompt()))}>
+                  set cash
+              </button>
+              <button onClick={() => getCash(Number(prompt()))}>
+                  get cash
+              </button>
+              <CustomerComponent/>
+              <PersonComponent/>
+          </div>
+     </div>
     </div>
   );
 }
