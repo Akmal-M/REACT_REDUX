@@ -1,7 +1,7 @@
 import './App.css';
 import {useDispatch, useSelector} from "react-redux";
 import CustomerComponent from "./components/customerComponent";
-import PersonComponent from "./components/personComponent";
+import PeopleComponent from "./components/peopleComponent";
 import {getCashActionCreator, setCashActionCreator} from "./store/actionCreators/cashActionCreator";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
                   get cash
               </button>
               <CustomerComponent/>
-              <PersonComponent/>
+              <PeopleComponent/>
           </div>
      </div>
     </div>

@@ -5,6 +5,7 @@ export const GET_CASH = "GET_CASH"
 export const ADD_CUSTOMER = "ADD_CUSTOMER"
 export const REMOVE_CUSTOMER = "REMOVE_CUSTOMER"
 
+export const GET_PEOPLE = "ADD_PERSON"
 export const ADD_PERSON = "ADD_PERSON"
 export const REMOVE_PERSON = "REMOVE_PERSON"
 

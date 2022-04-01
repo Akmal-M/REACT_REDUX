@@ -1,8 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_PERSON, REMOVE_PERSON} from "../store/constants/constants";
+import {ADD_PERSON, GET_PEOPLE, REMOVE_PERSON} from "../store/constants/constants";
+import {fetchPeople} from "../AsyncActions/people";
 
 
-const PersonComponent = () => {
+const PeopleComponent = () => {
 
     const dispatch = useDispatch()
     const people = useSelector(state => state.trainReducer.people)
@@ -19,8 +20,12 @@ const PersonComponent = () => {
         dispatch({type: REMOVE_PERSON, payload: person.id})
     }
 
+    const getPeople = () => {
+        dispatch(fetchPeople())
+    }
     return (
         <div>
+            <button onClick={() => getPeople()}>Get people</button>
             <button onClick={() => addPerson(prompt())}>Add Person</button>
             <button onClick={() => removePerson(prompt())}>Remove Person</button>
             {people.map(person =>
@@ -33,4 +38,4 @@ const PersonComponent = () => {
     )
 }
 
-export default PersonComponent
+export default PeopleComponent
