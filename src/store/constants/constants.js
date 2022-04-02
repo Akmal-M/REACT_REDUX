@@ -9,3 +9,6 @@ export const GET_PEOPLE = "ADD_PERSON"
 export const ADD_PERSON = "ADD_PERSON"
 export const REMOVE_PERSON = "REMOVE_PERSON"
 
+export const ADD_WORD = "ADD_WORD"
+export const REMOVE_WORD = "REMOVE_WORD"
+
