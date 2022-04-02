@@ -8,4 +8,4 @@ const rootReducer = combineReducers({
     wordReduce: wordReducer
 })
 
-export const store = createStore((composeWithDevTools(applyMiddleware(thunk))))
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
